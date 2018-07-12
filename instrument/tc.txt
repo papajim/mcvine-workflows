@@ -1,0 +1,17 @@
+tr gunzip {
+   site local {
+      pfn "/bin/gunzip"
+      arch "x86_64"
+      os "linux"
+      type "INSTALLED"
+   }
+   site nersc {
+		pfn "/usr/bin/gunzip"
+		arch "x86_64"
+		os "linux"
+		type "INSTALLED"
+		profile globus "jobtype" "single"
+        profile globus "maxTime" "30"
+   }
+}
+

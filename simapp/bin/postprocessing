@@ -1,0 +1,12 @@
+#!/usr/bin/env python
+
+import  histogram.hdf  as hh
+IE = hh.load('IE.h5')
+
+import matplotlib
+matplotlib.use('Agg')
+
+from  matplotlib import pyplot as plt
+
+plt.plot(IE.energy, IE.I)
+plt.savefig('energy.png')

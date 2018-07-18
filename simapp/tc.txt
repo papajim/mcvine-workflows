@@ -1,0 +1,26 @@
+cont mcvine {
+    type "docker"
+    image "docker:///papajim/mcvine:latest" 
+    #image "file://${PWD}/bin/mcvine_centos.tar"
+    #image_site "local"
+}
+
+tr simapp1 {
+   site condorpool {
+      pfn "file://${PWD}/bin/simapp1"
+      arch "x86_64"
+      os "linux"
+      type "STAGEABLE"
+      container "mcvine"
+   }
+}
+
+tr postprocessing {
+   site condorpool {
+      pfn "file://${PWD}/bin/postprocessing"
+      arch "x86_64"
+      os "linux"
+      type "STAGEABLE"
+      container "mcvine"
+    }
+}

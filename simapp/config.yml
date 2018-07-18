@@ -1,0 +1,4 @@
+simapp1:
+    cores: "4"
+    neutrons: "1e6"
+

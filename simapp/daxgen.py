@@ -25,7 +25,7 @@ energy_hdf5 = File("IE.h5")
 
 simapp1_job = Job(name="simapp1")
 simapp1_job.addArguments("--output-dir=.",
-                         "--ncount=" + cfg["simapp1"]["neutrons"])
+                         "--ncount=" + cfg["simapp1"]["neutrons"],
                          "--mpirun.nodes=" + cfg["simapp1"]["cores"],
                          "--overwrite-datafiles")
 simapp1_job.uses(config_in, link=Link.INPUT)
